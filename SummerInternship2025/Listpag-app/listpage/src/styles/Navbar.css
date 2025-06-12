@@ -1,0 +1,22 @@
+#Toolbar1{
+    background-color: white;
+}
+#PageTitle{
+     position: relative;
+     width:50%;
+     bottom: 20%;
+     color:black;
+     font-weight: bold;
+}
+#NewRFP{
+    position: relative;
+    left:25%;
+    width:10%;
+    background-color: rgb(19, 88, 185);
+    text-transform: capitalize;
+}
+#Profile{
+    position: relative;
+    left:30%;
+}
+

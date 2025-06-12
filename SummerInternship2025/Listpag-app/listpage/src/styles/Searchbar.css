@@ -1,0 +1,22 @@
+#Toolbar2{
+    background-color: white;
+}
+#Search{
+    height:5px;
+    color:black;
+}
+
+#DepartmentName{
+    width: 20%;
+    height:5px;
+}
+
+#Type{
+    width: 20%;
+    height:5px;
+}
+
+#Priority{
+    width: 20%;
+    height:5px;
+}

@@ -1,0 +1,36 @@
+/*Forgot password pages css*/
+.Page-Details{
+    margin-top: 10%;
+    position:relative;
+    right:5%;
+}
+#heading{
+  position: relative;
+  left:1%;
+}
+#textexp{
+  position: relative;
+  left:41.8%;
+  text-align: justify;
+}
+.input{ 
+  width:170%; 
+}
+
+#return{
+    position: relative;
+    right:4.4%;
+    color: black;
+    font-weight:bold;
+}
+
+#return:hover{
+  color: blue;
+}
+
+
+#Send{
+  border-radius: 10px;
+  width:170%; 
+  text-transform: capitalize;
+}

@@ -1,0 +1,59 @@
+/*Login pages css*/
+.Page-Details{
+    text-align: center;
+    margin-top: 10%;
+    position:relative;
+    right:5%;
+}
+
+#forgotpass{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    left:94%;
+    color: black;
+    font-weight:bold;
+
+}
+
+#forgotpass:hover{
+  color: blue;
+}
+
+#fp1{
+  text-decoration: none;
+}
+
+#Cracc{
+  position: relative;
+  left:6%;
+}
+
+#Heading{
+  position: relative;
+  left:6%;
+}
+
+#login{
+  border-radius: 10px;
+  width:170%; 
+  text-transform: capitalize;
+}
+
+#FinalAuthmessage{
+    position: relative;
+    margin-top: 10%;
+    left:6%;
+    color:darkred;
+}
+
+.Txtlab{
+  position: relative;
+  right:32%;
+}
+
+.input{ 
+  width:170%; 
+}
+
+
