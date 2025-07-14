@@ -1,0 +1,905 @@
+[{
+  "Payload-1": {
+    "configuration": {
+      "sourceType": "google-drive",
+      "credentials": {
+        "auth_type": "Service",
+        "service_account_info": "<Users service account>"
+      },
+      "folder_url": "User Input (Drive Folder URL)",
+      "streams": [
+        {
+          "name": "User Input",
+          "globs": ["User can Choose to input(Default Value:**)"],
+          "validation_policy": "Wait for Discover",
+          "days_to_sync_if_history_is_full": "User Input",
+          "input_schema": "User Input",
+          "format": {
+            "filetype": "User Input",
+            "delimiter": "(Default Choice)",
+            "quote_char": "(Default Choice)",
+            "encoding": "utf8(Default Choice)",
+            "double_quote": "False(Default Choice)",
+            "null_values": ["NA(Default Choice)"],
+            "strings_can_be_null": "True(Default Choice)",
+            "skip_rows_before_header": "1",
+            "skip_rows_after_header":"0",
+            "header_definition": { "header_definition_type": "From CSV" }
+          }
+        }
+      ],
+      "start_date": "2021-01-01T00:00:00.000000Z(User Input)"
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination(Do not include in final payload)":" This a google drive sourcetype payload. Here the format for the file is a csv. There can be multiple streams of data. "
+  },
+
+  "Payload-1_5": {
+    "configuration": {
+        "sourceType": "s3",
+        "start_date": "2021-01-01T00:00:00.000000Z",
+        "bucket": "<user_input>",
+        "aws_access_key_id": "<user_input> needed for private data . Ignore if it is public data. Ask User",
+        "role_arn": "<User_input> -External ID of workspace",
+        "endpoint": "<user_input> Default: leave parameter empty to use AWS",
+        "aws_secret_access_key": "<user_input>",
+        "region_name": "<user_input>",
+        "streams": [
+            {
+                "name": "<user_input>",
+                "globs": ["<user_input> Default value:**"],
+                "validation_policy": "Emit Record",
+                "input_schema": "<user_input>",
+                "format": {
+                "filetype": "User Input",
+                "delimiter": "(Default Choice)",
+                "quote_char": "(Default Choice)",
+                "encoding": "utf8(Default Choice)",
+                "double_quote": "False(Default Choice)",
+                "null_values": ["NA(Default Choice)"],
+                "strings_can_be_null": "True(Default Choice)",
+                "skip_rows_before_header": "1",
+                "skip_rows_after_header":"0",
+                "header_definition": { "header_definition_type": "From CSV" }
+                },
+                "days_to_sync_if_history_is_full": "<user_input_integer>",
+                "schemaless": "True",
+                "recent_n_files_to_read_for_schema_discovery": "<User_input_integer>"
+            }
+        ]
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a S3 sourcetype payload. Here the format for the file is a CSV. There can be multiple streams of data."
+  },
+  "Payload-2":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+          "storage": "local"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes a local filesystem as its provider. A user can specify reader options or just leave the default avlue of {}."
+  },
+
+  "Payload-2_5": {
+    "configuration": {
+        "sourceType": "s3",
+        "start_date": "2021-01-01T00:00:00.000000Z",
+        "bucket": "<user_input>",
+        "aws_access_key_id": "<user_input> needed for private data . Ignore if it is public data. Ask User",
+        "role_arn": "<User_input> -External ID of workspace",
+        "endpoint": "<user_input> Default: leave parameter empty to use AWS",
+        "aws_secret_access_key": "<user_input>",
+        "region_name": "<user_input>",
+        "streams": [
+            {
+                "name": "<user_input>",
+                "globs": ["<user_input> Default value:**"],
+                "validation_policy": "Emit Record or Skip Record or Wait for Discover",
+                "input_schema": "<user_input>",
+                "format": {
+                    "filetype": "avro",
+                    "double_as_string": "True"
+                },
+                "days_to_sync_if_history_is_full": "<user_input_integer>",
+                "schemaless": "True",
+                "recent_n_files_to_read_for_schema_discovery": "<User_input_integer>"
+            }
+        ]
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a S3 sourcetype payload. Here the format for the file is a avro. There can be multiple streams of data."
+  },
+
+  "Payload-3":{
+    "configuration": {
+        "sourceType": "smartsheets",
+         "credentials": {
+            "auth_type": "oauth2.0",
+            "client_id": "<user-input>",
+            "client_secret": "<user-input>",
+            "access_token": "<user-input>",
+            "token_expiry_date": "<user-input>",
+            "refresh_token": "<user-input>"
+        },
+        "spreadsheet_id": "<user-input>",
+        "metadata_fields(Needs to be included only if user desires it)": ["Possible values:(sheetcreatedAt,sheetid,sheetmodifiedAt,sheetname,sheetpermalink,sheetversion,sheetaccess_level,row_id,row_access_level,row_created_at,row_created_by,row_expanded,row_modified_by,row_parent_id,row_permalink,row_number,row_version)"]
+    },
+    "name": "<user-input>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a smartsheet payload.The auth type in this payload is oauth2.0"
+  },
+  "Payload-3_5":{
+    "configuration": {
+        "sourceType": "google-sheets",
+        "batch_size": "Default-val:200,user can input anything else",
+        "spreadsheet_id": "<user_input>",
+        "names_conversion": "True",
+        "credentials": {
+            "auth_type": "Client",
+            "client_id": "<user_input>",
+            "client_secret": "<user_input>",
+            "refresh_token": "<user_input>"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+     "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+},
+"Payload-3_5_1":{
+    "configuration": {
+        "sourceType": "google-sheets",
+        "batch_size": "Default-val:200,user can input anything else",
+        "spreadsheet_id": "<user_input>",
+        "names_conversion": "True",
+        "credentials": {
+            "auth_type": "Client",
+            "client_id": "<user_input>",
+            "client_secret": "<user_input>",
+            "refresh_token": "<user_input>"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+},
+
+"Payload-3_5_2":{
+    "configuration": {
+        "sourceType": "google-sheets",
+        "batch_size": "Default-val:200,user can input anything else",
+        "spreadsheet_id": "<user_input>",
+        "names_conversion": "True",
+        "credentials": {
+            "auth_type": "Service",
+            "service_account_info": "json_details"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+},
+
+  "Payload-4": {
+    "configuration": {
+      "sourceType": "google-drive",
+      "credentials": {
+           "auth_type": "Client",
+            "client_id": "user input",
+            "client_secret": "user input",
+            "refresh_token": "user input"
+      },
+      "folder_url": "User Input (Drive Folder URL)",
+      "streams": [
+        {
+          "name": "User Input",
+          "globs": ["User can Choose to input(Default Value:**)"],
+          "validation_policy": "Emit Record or Skip Record or Wait for Discover",
+          "days_to_sync_if_history_is_full": "User Input",
+          "input_schema": "User Input",
+          "format": {
+                    "filetype": "avro",
+                    "double_as_string": "True"
+                }
+        }
+      ],
+      "start_date": "2021-01-01T00:00:00.000000Z(User Input)"
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "type(Do not include this in the generated payload only for LLMs reference)":"Google Drive Source",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a google drive sourcetype payload. Here the format for the file is a avro. There can be multiple streams of data."
+  },
+
+  "Payload-4_5":{
+    "configuration": {
+        "sourceType": "smartsheets",
+        "credentials": {
+            "auth_type": "access_token",
+            "access_token": "<user_input>"
+        },
+        "spreadsheet_id": "<user-input>",
+        "metadata_fields(Needs to be included only if user desires it)": ["Possible values:(sheetcreatedAt,sheetid,sheetmodifiedAt,sheetname,sheetpermalink,sheetversion,sheetaccess_level,row_id,row_access_level,row_created_at,row_created_by,row_expanded,row_modified_by,row_parent_id,row_permalink,row_number,row_version)"]
+    },
+    "name": "<user-input>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a smartsheet payload.The auth type in this payload is an API access token "
+  },
+  "Payload-4_6":{
+    "configuration": {
+        "sourceType": "postgres",
+        "host": "<user_input>",
+        "port": "<user_input_int>",
+        "database": "<user_input>",
+        "username": "<user_input>",
+        "password": "<user_input> if password is set ",
+        "jdbc_url_params": "<user_input> use a url here. Refer to https://jdbc.postgresql.org/documentation/use/ ",
+        "ssl_mode": {
+            "mode": "disable",
+            "newKey": "New Value"
+        },
+        "schemas": ["<user_input>(defaults to public)"],
+        "replication_method": {
+            "method": "CDC",
+            "plugin": "pgoutput",
+            "replication_slot": "<user_input>",
+            "publication": "<user_input>",
+            "initial_waiting_seconds": "<user_input> integer default:1200",
+            "queue_size": "<user_input>",
+            "lsn_commit_behaviour": "While reading Data",
+            "heartbeat_action_query": "<user_input>",
+            "invalid_cdc_cursor_position_behavior": "Fail sync",
+            "initial_load_timeout_hours": "8(default value)"
+        },
+        "tunnel_method": {
+            "tunnel_method": "SSH_KEY_AUTH",
+            "tunnel_host": "<user_input>",
+            "tunnel_port": "Default_val:22 <user_input>",
+            "tunnel_user": "<user_input>",
+            "ssh_key": "<user_input>"
+        }
+    },
+    "name": "<name>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+   },
+  "Payload-4_7":{
+    "configuration": {
+        "sourceType": "postgres",
+        "host": "<user_input>",
+        "port": "<user_input_int>",
+        "database": "<user_input>",
+        "username": "<user_input>",
+        "password": "<user_input> if password is set ",
+        "jdbc_url_params": "<user_input> use a url here. Refer to https://jdbc.postgresql.org/documentation/use/ ",
+        "ssl_mode(Sample of disable or allow or prefer or require )": {
+            "mode": "(disable or allow or prefer or require) There are two other options verify_ca and verify_full. You can choose either the four options here or the other two options",
+            "newKey": "New Value"
+        },
+        "ssl_mode(Sample of verify_ca and verify_full)": {
+            "mode": "verify-ca or verify_full",
+            "ca_certificate": "<user_input>",
+            "client_certificate": "<user_input>",
+            "client_key": "<user_input>",
+            "client_key_password": "<user_input>",
+            "newKey": "New Value"
+        },
+       "Note(Only for LLM remove from finaly payload)":"You can only choose one type of ssl_mode per configuration. And there should be only one ssl_mode sample.",
+       "schemas": ["<user_input>(defaults to public)"],
+       "replication_method": { "method": "Xmin" },
+       "tunnel_method": { "tunnel_method": "NO_TUNNEL"}
+    },
+    "name": "<name>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+   }, 
+   "Payload-4_8":{
+    "configuration": {
+        "sourceType": "postgres",
+        "host": "<user_input>",
+        "port": "<user_input_int>",
+        "database": "<user_input>",
+        "username": "<user_input>",
+        "password": "<user_input> if password is set ",
+        "jdbc_url_params": "<user_input> use a url here. Refer to https://jdbc.postgresql.org/documentation/use/ ",
+        "ssl_mode(Sample of disable or allow or prefer or require )": {
+            "mode": "(disable or allow or prefer or require) There are two other options verify_ca and verify_full. You can choose either the four options here or the other two options",
+            "newKey": "New Value"
+        },
+        "ssl_mode(Sample of verify_ca and verify_full)": {
+            "mode": "verify-ca or verify_full",
+            "ca_certificate": "<user_input>",
+            "client_certificate": "<user_input>",
+            "client_key": "<user_input>",
+            "client_key_password": "<user_input>",
+            "newKey": "New Value"
+        },
+       "Note(Only for LLM remove from finaly payload)":"You can only choose one type of ssl_mode per configuration. And there should be only one ssl_mode sample.",
+       "schemas": ["<user_input>(defaults to public)"],
+        "replication_method": { "method": "Standard" },
+        "tunnel_method": {
+            "tunnel_method": "SSH_KEY_AUTH",
+            "tunnel_host": "<user_input>",
+            "tunnel_port": "22(Default_value) <user_input>",
+            "tunnel_user": "<user_input>",
+            "ssh_key": "<user_input>"
+        }
+    },
+    "name": "<name>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+   },  
+    "Payload-4_9":{
+    "configuration": {
+        "sourceType": "postgres",
+        "host": "<user_input>",
+        "port": "<user_input_int>",
+        "database": "<user_input>",
+        "username": "<user_input>",
+        "password": "<user_input> if password is set ",
+        "jdbc_url_params": "<user_input> use a url here. Refer to https://jdbc.postgresql.org/documentation/use/ ",
+        "ssl_mode(Sample of disable or allow or prefer or require )": {
+            "mode": "(disable or allow or prefer or require) There are two other options verify_ca and verify_full. You can choose either the four options here or the other two options",
+            "newKey": "New Value"
+        },
+        "ssl_mode(Sample of verify_ca and verify_full)": {
+            "mode": "verify-ca or verify_full",
+            "ca_certificate": "<user_input>",
+            "client_certificate": "<user_input>",
+            "client_key": "<user_input>",
+            "client_key_password": "<user_input>",
+            "newKey": "New Value"
+        },
+       "Note(Only for LLM remove from finaly payload)":"You can only choose one type of ssl_mode per configuration. And there should be only one ssl_mode sample.",
+        "tunnel_method": {
+            "tunnel_method": "SSH_PASSWORD_AUTH",
+            "tunnel_host": "<user_input>",
+            "tunnel_port": "22<user_input>",
+            "tunnel_user": "<user_input>",
+            "tunnel_user_password": "<user_input>"
+        }
+    },
+    "name": "<name>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+   },  
+  "Payload-5":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+            "storage": "SFTP",
+            "user": "<user_input>",
+            "password": "<user_input> if there is a password",
+            "host": "<user_input>",
+            "port": "<user_input>"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes SFTP as its provider. A user can specify reader options or just leave the default avlue of {}."
+},
+  "Payload-5_5": {
+    "configuration": {
+        "sourceType": "s3",
+        "start_date": "2021-01-01T00:00:00.000000Z",
+        "bucket": "<user_input>",
+        "aws_access_key_id": "<user_input> needed for private data . Ignore if it is public data. Ask User",
+        "role_arn": "<User_input> -External ID of workspace",
+        "endpoint": "<user_input> Default: leave parameter empty to use AWS",
+        "aws_secret_access_key": "<user_input>",
+        "region_name": "<user_input>",
+        "streams": [
+            {
+                "name": "<user_input>",
+                "globs": ["<user_input> Default value:**"],
+                "validation_policy": "Emit Record or Skip Record or Wait for Discover",
+                "input_schema": "<user_input>",
+                "format": { "filetype": "jsonl" },
+                "days_to_sync_if_history_is_full": "<user_input_integer>",
+                "schemaless": "True",
+                "recent_n_files_to_read_for_schema_discovery": "<User_input_integer>"
+            }
+        ]
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a S3 sourcetype payload. Here the format for the file is jsonl. There can be multiple streams of data."
+  },
+  "Payload-6": {
+    "configuration": {
+      "sourceType": "google-drive",
+      "credentials": {
+        "auth_type": "Service",
+        "service_account_info": "<Users service account>"
+      },
+      "folder_url": "User Input (Drive Folder URL)",
+      "streams": [
+        {
+          "name": "User Input",
+          "globs": ["User can Choose to input(Default Value:**)"],
+          "validation_policy": "Emit Record or Skip Record or Wait for Discover",
+          "days_to_sync_if_history_is_full": "User Input",
+          "input_schema": "User Input",
+          "format": {
+                    "filetype": "avro",
+                    "double_as_string": "True"
+                }
+        }
+      ],
+      "start_date": "2021-01-01T00:00:00.000000Z(User Input)"
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a google drive sourcetype payload. Here the format for the file is a avro. There can be multiple streams of data."
+  },
+  "Payload-6_5": {
+    "configuration": {
+        "sourceType": "s3",
+        "start_date": "2021-01-01T00:00:00.000000Z",
+        "bucket": "<user_input>",
+        "aws_access_key_id": "<user_input> needed for private data . Ignore if it is public data. Ask User",
+        "role_arn": "<User_input> -External ID of workspace",
+        "endpoint": "<user_input> Default: leave parameter empty to use AWS",
+        "aws_secret_access_key": "<user_input>",
+        "region_name": "<user_input>",
+        "streams": [
+            {
+                "name": "<user_input>",
+                "globs": ["<user_input> Default value:**"],
+                "validation_policy": "Emit Record or Skip Record or Wait for Discover",
+                "input_schema": "<user_input>",
+                "format": {
+                    "filetype": "parquet",
+                    "decimal_as_float": "Can either be True or False"
+                },
+                "days_to_sync_if_history_is_full": "<user_input_integer>",
+                "schemaless": "Can be True or False",
+                "recent_n_files_to_read_for_schema_discovery": "<User_input_integer>"
+            }
+        ]
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a S3 sourcetype payload. Here the format for the file is parquet. There can be multiple streams of data."
+  },
+  "Payload-7":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+            "storage": "SCP",
+            "user": "<user_input>",
+            "password": "<user_input> if there is a password",
+            "host": "<user_input>",
+            "port": "<user_input>"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes SCP as its provider. A user can specify reader options or just leave the default avlue of {}."
+},
+    "Payload-7_5": {
+    "configuration": {
+        "sourceType": "s3",
+        "start_date": "2021-01-01T00:00:00.000000Z",
+        "bucket": "<user_input>",
+        "aws_access_key_id": "<user_input> needed for private data . Ignore if it is public data. Ask User",
+        "role_arn": "<User_input> -External ID of workspace",
+        "endpoint": "<user_input> Default: leave parameter empty to use AWS",
+        "aws_secret_access_key": "<user_input>",
+        "region_name": "<user_input>",
+        "streams": [
+            {
+                "name": "<user_input>",
+                "globs": ["<user_input> Default value:**"],
+                "validation_policy": "Emit Record",
+                "input_schema": "<user_input>",
+                "format": {
+                    "filetype": "unstructured",
+                    "skip_unprocessable_files": "Can either be True or False",
+                    "strategy": "It can be auto, fast, ocr_only or hi-res",
+                    "processing": { "mode": "local" }
+                },
+                "days_to_sync_if_history_is_full": "<user_input_integer>",
+                "schemaless": "True",
+                "recent_n_files_to_read_for_schema_discovery": "<User_input_integer>"
+            }
+        ]
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a S3 sourcetype payload. Here the format for the file is unstructured. There can be multiple streams of data."
+  },
+  "Payload-8": {
+    "configuration": {
+      "sourceType": "google-drive",
+      "credentials": {
+            "auth_type": "Client",
+            "client_id": "user input",
+            "client_secret": "user input",
+            "refresh_token": "user input"
+      },
+      "folder_url": "User Input (Drive Folder URL)",
+      "streams": [
+        {
+          "name": "User Input",
+          "globs": ["User can Choose to input(Default Value:**)"],
+          "validation_policy": "Wait for Discover",
+          "days_to_sync_if_history_is_full": "User Input",
+          "input_schema": "User Input",
+          "format": { "filetype": "jsonl" } 
+        }
+      ],
+      "start_date": "2021-01-01T00:00:00.000000Z(User Input)"
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a google drive sourcetype payload. Here the format for the file is a jsonl. There can be multiple streams of data."
+  },
+    "Payload-8_1":{
+    "configuration": {
+        "sourceType": "mysql",
+        "host": "<user_input>",
+        "port": "<user_input_int>",
+        "database": "<user_input>",
+        "username": "<user_input>",
+        "password": "<user_input> if password is set ",
+        "jdbc_url_params": "<user_input> use a url here. Refer to https://jdbc.postgresql.org/documentation/use/ ",
+        "ssl_mode(Sample of disable or allow or prefer or require )": {
+            "mode": "(preferred or required) There are two other options verify_ca and verify_full. You can choose either the four options here or the other two options",
+            "newKey": "New Value"
+        },
+        "ssl_mode(Sample of verify_ca and verify_full)": {
+            "mode": "verify-ca or verify_full",
+            "ca_certificate": "<user_input>",
+            "client_certificate": "<user_input>",
+            "client_key": "<user_input>",
+            "client_key_password": "<user_input>",
+            "newKey": "New Value"
+        },
+       "Note(Only for LLM remove from finaly payload)":"You can only choose one type of ssl_mode per configuration. And there should be only one ssl_mode sample.",
+       "schemas": ["<user_input>(defaults to public)"],
+        "replication_method": {
+            "method": "CDC",
+            "initial_waiting_seconds": "300(Default Value user can input anything)",
+            "server_time_zone": "<user_input>",
+            "invalid_cdc_cursor_position_behavior": "Fail sync",
+            "initial_load_timeout_hours": "8(Default value) user can input a different number"
+        },
+       "tunnel_method": { "tunnel_method": "NO_TUNNEL"}
+    },
+    "name": "<name>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+   }, 
+    "Payload-8_2":{
+    "configuration": {
+        "sourceType": "mysql",
+        "host": "<user_input>",
+        "port": "<user_input_int>",
+        "database": "<user_input>",
+        "username": "<user_input>",
+        "password": "<user_input> if password is set ",
+        "jdbc_url_params": "<user_input> use a url here. Refer to https://jdbc.postgresql.org/documentation/use/ ",
+        "ssl_mode(Sample of disable or allow or prefer or require )": {
+            "mode": "(preferred or required) There are two other options verify_ca and verify_full. You can choose either the four options here or the other two options",
+            "newKey": "New Value"
+        },
+        "ssl_mode(Sample of verify_ca and verify_full)": {
+            "mode": "verify-ca or verify_full",
+            "ca_certificate": "<user_input>",
+            "client_certificate": "<user_input>",
+            "client_key": "<user_input>",
+            "client_key_password": "<user_input>",
+            "newKey": "New Value"
+        },
+       "Note(Only for LLM remove from finaly payload)":"You can only choose one type of ssl_mode per configuration. And there should be only one ssl_mode sample.",
+       "schemas": ["<user_input>(defaults to public)"],
+       "replication_method": { "method": "STANDARD" },
+        "tunnel_method": {
+            "tunnel_method": "SSH_PASSWORD_AUTH",
+            "tunnel_host": "<user_input>",
+            "tunnel_port": "22<user_input>",
+            "tunnel_user": "<user_input>",
+            "tunnel_user_password": "<user_input>"
+        }
+    },
+    "name": "<name>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+   }, 
+  "Payload-8_3":{
+    "configuration": {
+        "sourceType": "mysql",
+        "host": "<user_input>",
+        "port": "<user_input_int>",
+        "database": "<user_input>",
+        "username": "<user_input>",
+        "password": "<user_input> if password is set ",
+        "jdbc_url_params": "<user_input> use a url here. Refer to https://jdbc.postgresql.org/documentation/use/ ",
+        "ssl_mode(Sample of disable or allow or prefer or require )": {
+            "mode": "(preferred or required) There are two other options verify_ca and verify_full. You can choose either the four options here or the other two options",
+            "newKey": "New Value"
+        },
+        "ssl_mode(Sample of verify_ca and verify_full)": {
+            "mode": "verify-ca or verify_full",
+            "ca_certificate": "<user_input>",
+            "client_certificate": "<user_input>",
+            "client_key": "<user_input>",
+            "client_key_password": "<user_input>",
+            "newKey": "New Value"
+        },
+       "Note(Only for LLM remove from finaly payload)":"You can only choose one type of ssl_mode per configuration. And there should be only one ssl_mode sample.",
+       "schemas": ["<user_input>(defaults to public)"],
+       "replication_method": { "method": "Xmin" },
+        "tunnel_method": {
+            "tunnel_method": "SSH_KEY_AUTH",
+            "tunnel_host": "<user_input>",
+            "tunnel_port": "22(Default_value) <user_input>",
+            "tunnel_user": "<user_input>",
+            "ssh_key": "<user_input>"
+        }
+    },
+    "name": "<name>",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035"
+   }, 
+
+  "Payload-9":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+            "storage": "SSH",
+            "user": "<user_input>",
+            "password": "<user_input>",
+            "host": "<user_input>",
+            "port": "<user_input>"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes SSH as its provider. A user can specify reader options or just leave the default avlue of {}."
+},
+"Payload-10":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+            "storage": "AzBlob",
+            "storage_account": "user_input",
+            "sas_token": "user_input",
+            "shared_key": "user_input"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes AzBlob as its provider. A user can specify reader options or just leave the default avlue of {}."
+},
+   "Payload-11": {
+    "configuration": {
+      "sourceType": "google-drive",
+      "credentials": {
+        "auth_type": "Service",
+        "service_account_info": "<Users service account>"
+      },
+      "folder_url": "User Input (Drive Folder URL)",
+      "streams": [
+        {
+          "name": "User Input",
+          "globs": ["User can Choose to input(Default Value:**)"],
+          "validation_policy": "Wait for Discover",
+          "days_to_sync_if_history_is_full": "User Input",
+          "input_schema": "User Input",
+          "format": {
+                    "filetype": "parquet",
+                    "decimal_as_float": "Can either be True or False"
+                }
+        }
+      ],
+      "start_date": "2021-01-01T00:00:00.000000Z(User Input)"
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a google drive sourcetype payload. Here the format for the file is a avro. There can be multiple streams of data."
+  },
+  "Payload-12":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+            "storage": "S3",
+            "aws_access_key_id": "user_input",
+            "aws_secret_access_key": "user_input"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes S3 as its provider. A user can specify reader options or just leave the default avlue of {}."
+},
+  "Payload-13": {
+    "configuration": {
+      "sourceType": "google-drive",
+      "credentials": {
+              "auth_type": "Client",
+            "client_id": "user input",
+            "client_secret": "user input",
+            "refresh_token": "user input"
+      },
+      "folder_url": "User Input (Drive Folder URL)",
+      "streams": [
+        {
+          "name": "User Input",
+          "globs": ["User can Choose to input(Default Value:**)"],
+          "validation_policy": "Wait for Discover",
+          "days_to_sync_if_history_is_full": "User Input",
+          "input_schema": "User Input",
+          "format": {
+                    "filetype": "unstructured",
+                    "skip_unprocessable_files": "Can either be True or False",
+                    "strategy": "It can be auto, fast, ocr_only or hi-res",
+                    "processing": { "mode": "local" }
+                }
+        }
+      ],
+      "start_date": "2021-01-01T00:00:00.000000Z(User Input)"
+    },
+    "name": "(User Input)",
+    "definitionId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This a google drive sourcetype payload. Here the format for the file is a avro. There can be multiple streams of data."
+  },
+  "Payload-14":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+            "storage": "GCS",
+            "service_account_json": "<User Inputted Service account .json file>"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes GCP as its provider. A user can specify reader options or just leave the default avlue of {}."
+},
+"Payload-15":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+            "storage": "HTTPS",
+            "user_agent": "Can either be True or False"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes HTTPS as its provider. A user can specify reader options or just leave the default avlue of {}."
+},
+
+"Payload-16":{
+    "configuration": {
+        "sourceType": "file",
+        "format": "(User can choose between: excel,json,jsonl,csv,excel_binary,fwf,feather,parquet ,yaml)",
+        "dataset_name": "User Input",
+        "reader_options": {
+                          "sep": "(This can be set by user (Default values=' '))",
+                          "header":0,
+                          "names":["column1","column2","(Put Your Chosen Column names here)"]
+                          },
+        "url": "<User-input>",
+        "provider": {
+            "storage": "S3",
+            "aws_access_key_id": "user_input",
+            "aws_secret_access_key": "user_input"
+        }
+    },
+    "name": "My Source",
+    "workspaceId": "744cc0ed-7f05-4949-9e60-2a814f90c035",
+    "environment":"Important:Ask user which environment to create the source in. Give following options: Dev, QATesting or Prod",
+    "explaination":"(Do not include in final payload) This is a file sourcetype payload which utilizes S3 as its provider. A user can specify reader options or just leave the default avlue of {}."
+}
+}]
